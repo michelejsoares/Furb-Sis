@@ -2,14 +2,15 @@ import java.util.Scanner;
 
 public class Uni4Exe06 {
     public static void main(String[] args) {
-        char letra;
+        char letra, maiuscula;
         Scanner sc = new Scanner(System.in);
         letra = sc.next().charAt(0);
-        if(letra == 'F'){
+        maiuscula = Character.toUpperCase(letra);
+        if(maiuscula == 'F'){
             System.out.println("Feminino");
-        }else if(letra == 'M'){
+        }else if(maiuscula == 'M'){
             System.out.println("Masculino");
-        }else if(letra == 'I'){
+        }else if(maiuscula == 'I'){
             System.out.println("Não Informado");
         }else{
             System.out.println("Entrada Incorreta");
