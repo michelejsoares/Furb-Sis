@@ -7,8 +7,17 @@ public class Uni4Exe12 {
         lado1 = sc.nextInt();
         lado2 = sc.nextInt();
         lado3 = sc.nextInt();
-        if(lado1 < (lado2 + lado3) && lado2 < (lado1 + lado3) && lado3 < (lado1 + lado3)){
-            System.out.println("Não formam um triangulo.");
+        
+        if ((lado1 + lado2 > lado3) && (lado1 + lado3 > lado2) && (lado2 + lado3 > lado1)) {
+            if (lado1 == lado2 && lado2 == lado3) {
+                System.out.println("É equilátero.");
+            } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                System.out.println("É isósceles.");
+            } else {
+                System.out.println("É escaleno.");
+            }
+        } else {
+            System.out.println("Não formam um triângulo.");
         }
         sc.close();
     }
