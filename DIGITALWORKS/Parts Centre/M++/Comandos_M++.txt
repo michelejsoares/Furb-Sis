@@ -1,0 +1,23 @@
+ADD x,y        adiciona x no acumulador e guarda o resultado em y
+SUB x,y        subtrai x no acumulador e guarda o resultado em y
+MOV x,OUTy     move x para a saída y
+MOV INx,y      move a entrada x para y
+AND x,y        realiza a operação AND de x com A e guarda em y
+OR x,y         realiza a operação OR de x com A e guarda em y
+XOR x,y        realiza a operação XOR de x com A e guarda em y
+NOT A,y        realiza a operação NOT de A e guarda em y
+INC A,y        incrementa A e guarda em y;
+JMP label      pula para o label;
+JMPZ label     pula para o label se operação resulta em zero;
+JMPC label     pula para o label se operação resulta em carry out;
+CALL label     chama subrotina label;
+RET	       retorna da subrotina;
+MOV A,#00-#FF  move A para o endereço #00-#FF da memória RAM;
+
+Sintaxe:
+Números hexadecimais de dois bytes XX
+Labels:
+Comandos iniciados por TAB e finalizados com ;
+Comandos sempre em letras maiusculas
+// Comentários
+ 
