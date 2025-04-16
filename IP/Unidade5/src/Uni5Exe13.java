@@ -1,30 +1,22 @@
+import java.util.Scanner;
+
 public class Uni5Exe13 {
 	public static void main(String[] args) {
-		System.out.print("Número total de reabastecimentos: ");
-        int totalParadas = sc.nextInt();
-
-        double odometroAnterior = 0;
-        double totalKm = 0;
-        double totalLitros = 0;
-
-        for (int i = 1; i <= totalParadas; i++) {
-            System.out.print("Parada " + i + " - Quilometragem: ");
-            double odometroAtual = sc.nextDouble();
-
-            System.out.print("Parada " + i + " - Combustível (litros): ");
-            double litros = sc.nextDouble();
-
-            double kmRodado = odometroAtual - odometroAnterior;
-            double kmPorLitro = kmRodado / litros;
-
-            System.out.printf("Parada %d: %.2f km por litro\n", i, kmPorLitro);
-
-            odometroAnterior = odometroAtual;
-            totalKm += kmRodado;
-            totalLitros += litros;
+        Scanner sc = new Scanner(System.in);
+        int n = 0;
+        double quilometragem = 0, combustivel = 0, kml = 0, soma = 0, divisao = 0;
+        n = sc.nextInt();
+        for(int i = 1; i <= n; i++){
+            System.out.println("Parada "+i+": Quilometragem: ");
+            quilometragem = sc.nextDouble();
+            System.out.println("Combustivel: ");
+            combustivel = sc.nextDouble();
+            kml = quilometragem / combustivel;
+            System.out.println("Parada "+i+": "+kml+" km por litro");
+            soma += kml;
         }
-
-        double media = totalKm / totalLitros;
-        System.out.printf("Quilometragem média obtida por litro: %.2f\n", media);
+        divisao = soma / n;
+        System.out.println("Quilometragem média obtida por litro: "+divisao);
+        sc.close(); 
 	}
 }
