@@ -6,6 +6,7 @@ public class Uni5Exe14 {
         int n = 0;
         String nome;
         double pc = 0, pv = 0, lucro = 0;
+        System.out.println("Numero de mercadoria: ");
         n = sc.nextInt();
         for(int i = 0; i <= n; i++){
             System.out.println("Nome: ");
@@ -15,6 +16,7 @@ public class Uni5Exe14 {
             System.out.println("Preço Venda: ");
             pv = sc.nextDouble();
             lucro = (pv - pc) / pc * 100;
+            System.out.println("Mercadoria: "+nome+". Preço Compra: R$"+pc+", Venda: R$"+pv+". Lucro: R$"+lucro);
         }
         sc.close();
     }
