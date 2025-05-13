@@ -33,6 +33,8 @@ public class Uni6Exe10 {
                     break;
                 case 3: 
                     alterarValor(sc);
+                case 4:
+                    excluirValor(sc);
                 default:
                     break;
             }
@@ -89,4 +91,21 @@ public class Uni6Exe10 {
             System.out.println("Valor não encontrado");
         }
     }
+    private void excluirValor(Scanner sc){
+        int valorExcluir = 0, novoValor = 0;
+        boolean valorNaoEncontrado = false;
+        System.out.println("Valor para excluir");
+        valorExcluir = sc.nextInt();
+        for (int i = 0; i < 50; i++) {
+            if(valorExcluir ==  vetor[i]){
+                vetor[i] = 0;
+                System.out.println("Valor Excluido");
+            }else{
+                valorNaoEncontrado = false;
+            }
+        }
+        if(!valorNaoEncontrado){
+            System.out.println("Valor não encontrado");
+        }
+    }    
 }
