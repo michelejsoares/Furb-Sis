@@ -35,6 +35,8 @@ public class Uni6Exe10 {
                     alterarValor(sc);
                 case 4:
                     excluirValor(sc);
+                case 5:
+                    mostrarValor();
                 default:
                     break;
             }
@@ -92,7 +94,7 @@ public class Uni6Exe10 {
         }
     }
     private void excluirValor(Scanner sc){
-        int valorExcluir = 0, novoValor = 0;
+        int valorExcluir = 0;
         boolean valorNaoEncontrado = false;
         System.out.println("Valor para excluir");
         valorExcluir = sc.nextInt();
@@ -107,5 +109,16 @@ public class Uni6Exe10 {
         if(!valorNaoEncontrado){
             System.out.println("Valor não encontrado");
         }
-    }    
+    }
+    private void mostrarValor(){
+        String cVirgula = "";
+        System.out.println("Valores: ");
+        for (int i = 0; i < 50; i++) {
+            if(vetor[i] > 0){
+                System.out.print(cVirgula+vetor[i]);
+                cVirgula = ", ";
+            }
+        }
+        System.out.println("");
+    }
 }
