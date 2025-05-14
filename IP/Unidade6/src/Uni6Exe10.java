@@ -33,10 +33,22 @@ public class Uni6Exe10 {
                     break;
                 case 3: 
                     alterarValor(sc);
+                    break;
                 case 4:
                     excluirValor(sc);
+                    break;
                 case 5:
                     mostrarValor();
+                    break;
+                case 6: 
+                    ordenarValores();
+                    break;
+                case 7: 
+                    inverterValores();
+                    break;
+                case 8: 
+                    System.out.println("FIM!");
+                    break;
                 default:
                     break;
             }
@@ -120,5 +132,28 @@ public class Uni6Exe10 {
             }
         }
         System.out.println("");
+    }
+    private void ordenarValores(){
+        for(int i = 0; i < vetor.length; i++){
+            for(int j = 0; j < vetor.length - 1 - i; j++){
+                if(vetor[j] > vetor[j + 1]){
+                    int temp = vetor[j];
+                    vetor[j] = vetor[j+1];
+                    vetor[j + 1] = temp;
+                }
+            }
+        }
+        mostrarValor();
+    }
+    private void inverterValores(){
+        int temp = 0;
+        for (int i = 0; i < vetor.length; i++) {
+            for (int j = 0; j < i; j++) {
+                temp = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = temp;
+            }
+        }
+        mostrarValor();
     }
 }
