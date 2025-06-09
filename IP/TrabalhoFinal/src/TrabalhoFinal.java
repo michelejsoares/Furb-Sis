@@ -4,19 +4,24 @@ import java.util.Scanner;
 public class TrabalhoFinal {
 
     public static void main(String[] args) {
-        new TrabalhoFinal().iniciarJogo();
+        new TrabalhoFinal();
     }
-
+    private TrabalhoFinal(){
+        iniciarJogo();
+    }
     private void iniciarJogo() {
         Scanner sc = new Scanner(System.in);
         Random gerador = new Random();
 
-        String[][] mapa = inicializarMapa();
+        String[][] mapa = new String[8][8];
         String[][] navios = new String[8][8];
-        int[][] naviosCoordenadas = posicionarNavios(navios, gerador);
+        int[][] naviosCoordenadas = new int[10][2];
 
         int qtdJogadas = 10;
         int qtdAcertos = 0;
+
+        mapa = inicializarMapa(mapa);
+        naviosCoordenadas = posicionarNavios(navios, gerador);
 
         while (qtdJogadas > 0 && qtdAcertos < 10) {
             imprimirMapa(mapa);
@@ -51,8 +56,7 @@ public class TrabalhoFinal {
         sc.close();
     }
 
-    private String[][] inicializarMapa() {
-        String[][] mapa = new String[8][8];
+    private String[][] inicializarMapa(String[][] mapa) {
         for (int i = 0; i < mapa.length; i++) {
             for (int j = 0; j < mapa[i].length; j++) {
                 mapa[i][j] = "~";
@@ -63,7 +67,6 @@ public class TrabalhoFinal {
 
     private int[][] posicionarNavios(String[][] navios, Random gerador) {
         int[][] coordenadas = new int[10][2];
-
         for (int i = 0; i < 10; i++) {
             int linha, coluna;
             do {
