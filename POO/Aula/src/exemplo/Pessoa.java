@@ -9,6 +9,9 @@ public class Pessoa {
 		return nome;
 	}
 	public void setNome(String nome) {
+		if(nome.trim().isEmpty()) {
+			throw new IllegalArgumentException("Nome invalido!");
+		}
 		this.nome = nome;
 	}
 	
@@ -39,3 +42,4 @@ public class Pessoa {
 		return imc;
 	}
 }
+
