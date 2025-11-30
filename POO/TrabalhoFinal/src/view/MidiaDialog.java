@@ -177,15 +177,15 @@ public class MidiaDialog extends JDialog {
 
         if ("MUSICA".equalsIgnoreCase(tipo)) {
 
-            return new Musica(local, tamanhoBytes, titulo, duracaoTemp, categoria, extra, durCalc);
+            return new Musica(local, tamanhoBytes, titulo, duracaoTemp, categoria, extra);
 
         } else if ("FILME".equalsIgnoreCase(tipo)) {
 
-            return new Filme(local, tamanhoBytes, titulo, duracaoTemp, categoria, extra, durCalc);
+            return new Filme(local, tamanhoBytes, titulo, duracaoTemp, categoria, extra);
 
         } else {
 
-            return new Livro(local, tamanhoBytes, titulo, duracaoTemp, categoria, extra, durCalc);
+            return new Livro(local, tamanhoBytes, titulo, duracaoTemp, categoria, extra);
         }
     }
 
@@ -198,7 +198,5 @@ public class MidiaDialog extends JDialog {
         categoriaField.setText(m.getCategoria());
 
         extraField.setText(m.exibirAtributosEspecificos());
-
-        durCalc = m.isDuracaoCalculada();
     }
 }

@@ -17,40 +17,6 @@ public class MidiaControle {
     }
 
     public Midia incluirMedia(Midia m) throws Exception {
-
-        // Se o usuário NÃO informou duração
-        boolean naoInformou = (m.getDuracao() == 0);
-
-        if (naoInformou) {
-
-            long duracao;
-
-            switch (m.getTipo().toUpperCase()) {
-
-                case "MUSICA":
-                    duracao = calcularDuracaoKB(m.getLocal()); // por enquanto usa KB
-                    break;
-
-                case "FILME":
-                    duracao = calcularDuracaoKB(m.getLocal());
-                    break;
-
-                case "LIVRO":
-                    duracao = calcularDuracaoKB(m.getLocal());
-                    break;
-
-                default:
-                    duracao = calcularDuracaoKB(m.getLocal());
-                    break;
-            }
-
-            m.setDuracao(duracao);
-            m.setDuracaoCalculada(true);
-
-        } else {
-            m.setDuracaoCalculada(false);
-        }
-
         dao.salvar(m);
         return m;
     }

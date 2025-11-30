@@ -9,29 +9,26 @@ public abstract class Midia {
     private String titulo;
     private long duracao;
     private String categoria;
-    private boolean duracaoCalculada = false;
 
 	// CONSTRUTOR PARA NOVAS MÍDIAS (usa IdGenerator)
-    public Midia(String local, long tamanhoBytes, String titulo, long duracao, String categoria, boolean duracaoCalculada) {
+    public Midia(String local, long tamanhoBytes, String titulo, long duracao, String categoria) {
         this.id = IdGerador.novoId();
         this.local = local;
         this.tamanhoBytes = tamanhoBytes;
         this.titulo = titulo;
         this.duracao = duracao;
         this.categoria = categoria;
-        this.duracaoCalculada = duracaoCalculada;
     }
 
 
     // CONSTRUTOR PARA CARREGAR DO DISCO (recebe id)
-    public Midia(int id, String local, long tamanhoBytes, String titulo, long duracao, String categoria, boolean duracaoCalculada) {
+    public Midia(int id, String local, long tamanhoBytes, String titulo, long duracao, String categoria) {
         this.id = id;
         this.local = local;
         this.tamanhoBytes = tamanhoBytes;
         this.titulo = titulo;
         this.duracao = duracao;
         this.categoria = categoria;
-        this.duracaoCalculada = duracaoCalculada;
     }
 
 
@@ -73,14 +70,6 @@ public abstract class Midia {
     public void setCategoria(String categoria) { 
     	this.categoria = categoria; 
     }
-    public boolean isDuracaoCalculada() {
-		return duracaoCalculada;
-	}
-
-	public void setDuracaoCalculada(boolean duracaoCalculada) {
-		this.duracaoCalculada = duracaoCalculada;
-	}
-
     public abstract String getTipo();
     public abstract String exibirAtributosEspecificos();
 

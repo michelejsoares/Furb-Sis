@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 public class Livro extends Midia{
 	private String autores;
 
-    public Livro(String local, long tamanhoBytes, String titulo, long paginas, String categoria, String autores, boolean durCalc) {
-        super(local, tamanhoBytes, titulo, paginas, categoria, durCalc);
+    public Livro(String local, long tamanhoBytes, String titulo, long paginas, String categoria, String autores) {
+        super(local, tamanhoBytes, titulo, paginas, categoria);
         this.autores = autores;
     }
     
-    public Livro(int id, String local, long tamanhoBytes, String titulo, long paginas, String categoria, String autores, boolean durCalc) {
-        super(id, local, tamanhoBytes, titulo, paginas, categoria, durCalc);
+    public Livro(int id, String local, long tamanhoBytes, String titulo, long paginas, String categoria, String autores) {
+        super(id, local, tamanhoBytes, titulo, paginas, categoria);
         this.autores = autores;
     }
 

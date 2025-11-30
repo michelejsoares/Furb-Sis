@@ -105,7 +105,6 @@ public class FileMidiaDAO implements MidiaDAO{
                 map.put("autores", l.getAutores());
             }
         }
-        map.put("duracaoCalculada", String.valueOf(m.isDuracaoCalculada()));
         return map;
     }
 
@@ -128,15 +127,14 @@ public class FileMidiaDAO implements MidiaDAO{
             String titulo = map.getOrDefault("titulo","");
             long dur = Long.parseLong(map.getOrDefault("duracao","0"));
             String categoria = map.getOrDefault("categoria","");
-            boolean durCalc = Boolean.parseBoolean(map.getOrDefault("duracaoCalculada", "false"));
             switch(tipo) {
                 case "MUSICA":
                     //return new Musica(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("artista",""));
-                    return new Musica(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("artista",""), durCalc);
+                    return new Musica(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("artista",""));
                 case "FILME":
-                    return new Filme(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("idiomaAudio",""), durCalc);
+                    return new Filme(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("idiomaAudio",""));
                 case "LIVRO":
-                    return new Livro(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("autores",""), durCalc);
+                    return new Livro(id, local, tamanho, titulo, dur, categoria, map.getOrDefault("autores",""));
                 default:
                     return null;
             }

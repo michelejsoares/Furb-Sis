@@ -3,13 +3,13 @@ package model;
 public class Filme extends Midia{
 	private String idiomaAudio;
 
-    public Filme(String local, long tamanhoBytes, String titulo, long duracaoMinutes, String categoria, String idiomaAudio, boolean durCalc) {
-        super(local, tamanhoBytes, titulo, duracaoMinutes, categoria, durCalc);
+    public Filme(String local, long tamanhoBytes, String titulo, long duracaoMinutes, String categoria, String idiomaAudio) {
+        super(local, tamanhoBytes, titulo, duracaoMinutes, categoria);
         this.idiomaAudio = idiomaAudio;
     }
     
-    public Filme(int id, String local, long tamanhoBytes, String titulo, long duracaoMinutes, String categoria, String idiomaAudio, boolean durCalc) {
-        super(id, local, tamanhoBytes, titulo, duracaoMinutes, categoria, durCalc);
+    public Filme(int id, String local, long tamanhoBytes, String titulo, long duracaoMinutes, String categoria, String idiomaAudio) {
+        super(id, local, tamanhoBytes, titulo, duracaoMinutes, categoria);
         this.idiomaAudio = idiomaAudio;
     }
 
