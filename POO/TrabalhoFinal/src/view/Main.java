@@ -147,21 +147,30 @@ public class Main extends JFrame {
             JOptionPane.showMessageDialog(this, "Selecione uma mídia.");
             return;
         }
+
         Midia m = tableModel.getMediaAt(r);
         MidiaDialog dlg = new MidiaDialog(this);
         dlg.fillFromMedia(m);
         dlg.setVisible(true);
+
         if (dlg.isConfirmed()) {
-            Midia updated = dlg.buildMediaFromForm();
             try {
-                controle.removerMidia(m.getId());
-                controle.incluirMedia(updated);
+                Midia updated = dlg.buildMediaFromForm();
+
+                // *** AQUI ESTÁ A CORREÇÃO PRINCIPAL ***
+                updated.setId(m.getId());
+                updated.setLocal(m.getLocal()); // preserva arquivo original
+
+                controle.atualizarMidia(updated);
+
                 reloadTable();
+
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this, "Erro editar: " + ex.getMessage());
             }
         }
     }
+
 
     private void onRemover() {
         int r = table.getSelectedRow();
@@ -210,7 +219,7 @@ public class Main extends JFrame {
         }
         Midia m = tableModel.getMediaAt(r);
         String novo = JOptionPane.showInputDialog(this,
-                "Novo nome de arquivo (somente nome, com extensão):", "",
+                "Novo nome de arquivo (somente nome):", "",
                 JOptionPane.PLAIN_MESSAGE);
         if (novo != null && !novo.trim().isEmpty()) {
             try {

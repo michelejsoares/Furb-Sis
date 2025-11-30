@@ -30,12 +30,11 @@ public class MidiaDialog extends JDialog {
     private JButton btnChoose;
     private boolean confirmed = false;
 
-    // >>>>>>>>>>> NOVOS CAMPOS <<<<<<<<<<<<<<
     private boolean durCalc = false;
     private long duracaoTemp = 0;
 
     public MidiaDialog(Frame owner) {
-        super(owner, "Incluir/Edit Media", true);
+        super(owner, "Incluir/Editar Midia", true);
         init();
     }
 
@@ -114,27 +113,6 @@ public class MidiaDialog extends JDialog {
                 }
             }
 
-            // >>>>>>>>>>> NOVA LÓGICA DE DURAÇÃO AUTOMÁTICA <<<<<<<<<<<<
-
-            if (durField.getText().trim().isEmpty()) {
-
-                // Usuário NÃO informou duração
-                long tamanhoKB = f.length() / 1024;
-
-                duracaoTemp = tamanhoKB;
-                durCalc = true;
-
-                durField.setText(String.valueOf(duracaoTemp));
-
-            } else {
-                // Usuário informou duração manualmente
-                try {
-                    duracaoTemp = Long.parseLong(durField.getText().trim());
-                } catch (Exception ex) {
-                    duracaoTemp = 0;
-                }
-                durCalc = false;
-            }
         }
     }
 
