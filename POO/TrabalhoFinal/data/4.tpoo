@@ -1,0 +1,9 @@
+id=4
+tipo=LIVRO
+local=C:\Users\Michele\Downloads\Carne Gilmar.pdf
+tamanhoBytes=508486
+titulo=livro
+duracao=0
+categoria=acao
+autores=teste
+duracaoCalculada=false
